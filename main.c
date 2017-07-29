@@ -14,23 +14,23 @@ void sig_handler(int signo)
 
 unsigned long long int getTotalMemory(){
    char * mem = NULL;
-   int i = 10;
+   int i = 2048;
    while (mem == NULL){
-     mem = malloc (GB+((GB*10)/i));
+     mem = malloc (GB+((GB*2048)/i));
      i--;
      if (i == 0){
        goto label;
      }
    }
    free(mem);
-   return -(((GB/6)*i)+GB);
+   return (GB+((GB/2048)*i));
    label:
    return GB;
 }
 
 void * utilizeMemory(void *vargp){
   unsigned long long int world = getTotalMemory();
-  printf("Total memory : %d\n",world);
+  printf("Total free memory : %d\n",world);
   char * master_jew = (char *)malloc(world);
   for (int i=0;i<world;i++){
     master_jew[i] = 0;
@@ -51,6 +51,11 @@ void * utilizeThreads(void *vargp){
     long long int w = GB + GB * 21;
     long long int s = GB + GB * 11;
     long long int z = GB + GB * 1;
+    float ju = GB / j * e / w * s;
+    float d = GB / j * e / w * s;
+    float a = GB / j * e / w * s;
+    float i = GB / j * e / w * s;
+    float sm = GB / j * e / w * s;
     goto label1;
   }
 }
